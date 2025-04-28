@@ -9,13 +9,14 @@ import sofa2 from "../assets/sofa2.jpg";
 import sofa3 from "../assets/sofa3.jpg";
 import { Product } from "../context/IUserContext";
 
+const Home = () => {
+  
 const userContext = useContext(UserContext);
 
 if (!userContext) {
   throw new Error("UserContext debe usarse dentro de un UserProvider");
 }
 
-const Home = () => {
   const { fetchNewestProducts } = userContext;
   const [newestProducts, setNewestProducts] = useState<Product[]>([]);
 

@@ -6,7 +6,7 @@ import whatsappIcon from "../assets/whatsapp-line.svg";
 import { formatPrice } from "../helpers/helpers";
 import { Product, User } from "../context/IUserContext";
 
-const Product = () => {
+const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const userContext = useContext(UserContext);
@@ -142,4 +142,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductDetail;
