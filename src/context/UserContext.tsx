@@ -108,7 +108,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
       if (!response.ok) {
         throw new Error(data.msg || "Error al obtener los productos.");
       }
-      return data; // Devuelve la lista de productos
+      return data;
     } catch (error) {
       console.error("Error en fetchObtenerProductosUsuario:", error);
       return [];
@@ -116,7 +116,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   };
 
   const fetchCreateProduct = async (producto: any) => {
-    console.log("Enviando producto al backend:", producto);
     try {
       const response = await fetch(ENDPOINT.products + "/agregar", {
         method: "POST",
@@ -199,7 +198,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   };
   const fetchUserDataByProduct = async (id_producto: number) => {
     try {
-      // throw new Error("fetchUserDataByProduct");
       const response = await fetch(ENDPOINT.users + `/producto/${id_producto}`);
       if (!response.ok) {
         throw new Error("Error al obtener los datos del usuario.");
@@ -232,7 +230,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
         throw new Error(data.error || "Error al actualizar el stock");
       }
 
-      console.log("Stock actualizado correctamente:", data);
       return data;
     } catch (error) {
       if (error instanceof Error) {

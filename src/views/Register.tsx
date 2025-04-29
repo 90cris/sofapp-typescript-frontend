@@ -23,8 +23,8 @@ const Register = () => {
     apellido: "",
     email: "",
     fono: "",
-    pass: "",         // <- del User interface
-    password: "",     // <- local para validar
+    pass: "",        
+    password: "",   
     confirmPassword: "",
   });
 
@@ -44,7 +44,7 @@ const Register = () => {
     event.preventDefault();
     setError("");
 
-    // Validaciones
+ 
     if (
       !user.nombre ||
       !user.apellido ||

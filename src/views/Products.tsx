@@ -68,7 +68,7 @@ const Products = () => {
         } else if (selectedBody) {
           data = await fetchProductsByBody(selectedBody);
         } else {
-          // Recarga de productos
+       
           data = await getProducts();
         }
 
@@ -84,7 +84,6 @@ const Products = () => {
       }
     };
 
-    // Solo ejecutamos la búsqueda si hay algún filtro seleccionado
     if (selectedBrand || selectedType || selectedBody) {
       loadFilteredProducts();
     }

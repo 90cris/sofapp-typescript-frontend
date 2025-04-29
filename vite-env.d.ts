@@ -2,7 +2,6 @@
 
 interface ImportMetaEnv {
     readonly VITE_URL_BACKEND: string;
-    // puedes agregar más variables si tienes otras en .env
   }
   
   interface ImportMeta {

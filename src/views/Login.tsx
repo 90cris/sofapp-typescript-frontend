@@ -59,7 +59,6 @@ const Login = () => {
       <h1>Iniciar Sesión</h1>
       <hr />
 
-      {/* Alerta si el email no está registrado */}
       {error.notRegistered && (
         <div className="alert alert-warning text-center" role="alert">
           El email no registrado. Para registrarte pincha{" "}

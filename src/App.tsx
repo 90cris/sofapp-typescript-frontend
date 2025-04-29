@@ -37,12 +37,12 @@ function App() {
                 <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
                 <Route path="/policies" element={<Policies/>} />
 
-                {/* Rutas protegidas */}
+         
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/CreatePost" element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
           <Route path="/MyProducts" element={<ProtectedRoute><MyProducts /></ProtectedRoute>} />
 
-          {/* Ruta por defecto */}
+      
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

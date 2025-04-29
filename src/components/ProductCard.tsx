@@ -42,7 +42,6 @@ const ProductCard = ({ producto, onClick }: ProductCardProps) => {
     obtenerProductos();
   }, [id_usuario]);
 
-  // Función para actualizar el stock localmente
   const actualizarStockLocal = (id_producto: number, nuevoStock: number) => {
     setProductos((prevProductos) =>
       prevProductos.map((p) =>
@@ -51,7 +50,6 @@ const ProductCard = ({ producto, onClick }: ProductCardProps) => {
     );
   };
 
-  // Incrementar stock
   const handleIncreaseStock = async (
     id_producto: number,
     stockActual: number
@@ -63,7 +61,6 @@ const ProductCard = ({ producto, onClick }: ProductCardProps) => {
     }
   };
 
-  // Decrementar stock
   const handleDecreaseStock = async (
     id_producto: number,
     stockActual: number

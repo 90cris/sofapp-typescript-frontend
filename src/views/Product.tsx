@@ -90,7 +90,7 @@ const ProductDetail = () => {
                       Volver atrás
                     </Button>
                   </Card.Body>
-                  {/* Contenedor de datos del cliente */}
+      
                   <div className="m-4 p-3 border rounded">
                     <h5>Información del vendedor</h5>
                     {userData ? (
@@ -117,7 +117,7 @@ const ProductDetail = () => {
                                 width: "20px",
                                 height: "20px",
                                 marginLeft: "5px",
-                              }} // Ajusta el tamaño como necesites
+                              }}
                             />
                           </a>
                         </div>
