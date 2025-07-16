@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ReactNode, useContext } from "react";
 import CustomNavbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import MySpinner from './components/Spinner';
+import MySpinner from "./components/Spinner";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Register from "./views/Register";
@@ -29,31 +29,58 @@ function App() {
         <CustomNavbar />
         <MySpinner />
         <Routes>
-     
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/product/:id" element={<ProductDetail />} />
-                <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
-                <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
-                <Route path="/policies" element={<Policies/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
+            }
+          />
+          <Route path="/policies" element={<Policies />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/CreatePost"
+            element={
+              <ProtectedRoute>
+                <CreatePost />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/MyProducts"
+            element={
+              <ProtectedRoute>
+                <MyProducts />
+              </ProtectedRoute>
+            }
+          />
 
-         
-          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-          <Route path="/CreatePost" element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
-          <Route path="/MyProducts" element={<ProtectedRoute><MyProducts /></ProtectedRoute>} />
-
-      
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
-      <div style={{minHeight: "46vh"}}></div>
+      <div style={{ minHeight: "46vh" }}></div>
       <Footer />
     </UserProvider>
   );
 }
-
-
-
-
 
 export default App;

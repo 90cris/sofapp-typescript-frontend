@@ -59,8 +59,7 @@ const CreatePost = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(Object.entries(formData));
-    if (Object.values(formData).some((field) => !field)) {
+      if (Object.values(formData).some((field) => field === "")) {
       setError("Todos los campos son obligatorios");
       return;
     }
@@ -269,6 +268,18 @@ const CreatePost = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formPhoto">
               <Form.Label>Foto (URL)</Form.Label>
+ <Form.Control
+                type="url"
+                name="photo"
+                value={formData.photo}
+                onChange={handleChange}
+                placeholder="https://example.com/imagen.jpg"
+                required
+              />
+          <Form.Text className="text-muted">
+                Ingresa una URL válida que apunte a una imagen.
+              </Form.Text>
+
             </Form.Group>
           </Col>
         </Row>
